@@ -1,0 +1,10 @@
+#!/bin/sh
+find $HOME/music -type f | while read SONG; do
+	DIR=$(dirname "$SONG")
+	ARTIST=$(basename "$DIR")
+	TITLE=$(basename "$SONG" | rev | cut -d"." -f2- | rev)
+	echo "$DIR | $ARTIST | $TITLE"
+	eyeD3 --remove-all-images "$SONG"
+	id3v2 --delete-all "$SONG"
+	id3v2 --artist "$ARTIST" --song "$TITLE" -2 "$SONG"
+done

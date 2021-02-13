@@ -1,0 +1,82 @@
+/* context menu - blank */
+#context-back,#context-bookmarkpage,#context-forward,#context-inspect,#context-navigation,#context-pocket,#context-reload,#context-savepage,#context-selectall,#context-sendpagetodevice,#context-sep-navigation,#context-sep-sendpagetodevice,#context-sep-viewbgimage,#context-sep-viewsource,#context-stop,#context-viewinfo,#context-viewsource,#inspect-separator,#screenshots_mozilla_org_create-screenshot{display:none !important}
+
+/* context menu - frame */
+#context-bookmarkframe,#context-openframe,#context-openframeintab,#context-printframe,#context-printframe + menuseparator,#context-reloadframe,#context-reloadframe + menuseparator,#context-saveframe,#context-saveframe + menuseparator,#context-showonlythisframe,#context-viewframeinfo,#context-viewframesource,#open-frame-sep{display:none !important}
+
+/* context menu - image */
+#context-reloadimage,#context-sendimage,#context-sep-copyimage,#context-setDesktopBackground,#context-viewimageinfo{display:none !important}
+
+/* context menu - input */
+#context-bidi-page-direction-toggle,#context-bidi-text-direction-toggle,#context-copy,#context-cut,#context-delete,#context-keywordfield,#context-paste,#context-selectall,#context-sep-bidi,#context-sep-paste,#context-sep-undo,#context-undo,#fill-login,#fill-login-separator,#spell-add-dictionaries-main,#spell-check-enabled,#spell-dictionaries,#spell-separator{display:none !important}
+
+/* context menu - link */
+#context-bookmarklink,#context-openlink,#context-openlinkinusercontext-menu,#context-openlinkprivate,#context-savelinktopocket,#context-searchselect,#context-sendlinktodevice,#context-sep-open,#context-sep-sendlinktodevice{display:none !important}
+
+/* context menu - media */
+#context-sendaudio{display:none !important}
+
+/* context menu - page action */
+#pageAction-panel-addSearchEngine,#pageAction-panel-bookmark,#pageAction-panel-bookmarkSeparator,#pageAction-panel-builtInSeparator,#pageAction-panel-copyURL,#pageAction-panel-emailLink,#pageAction-panel-pocket,#pageAction-panel-screenshots,#pageAction-panel-sendToDevice,#pageAction-panel-transientSeparator,#pageAction-panel-webcompat-reporter-button{display:none !important}
+
+/* context menu - select */
+#context-viewpartialsource-selection{display:none !important}
+
+/* context menu - side bar */
+#placesContext_copy,#placesContext_createBookmark,#placesContext_cut,#placesContext_deleteHost,#placesContext_deleteSeparator,#placesContext_delete_history,#placesContext_editSeparator,#placesContext_openLinks:tabs,#placesContext_open:newprivatewindow,#placesContext_open:newwindow,#placesContext_paste,#placesContext_reload{display:none !important}
+
+/* context menu - tab */
+#context_closeOtherTabs,#context_closeTabsToTheEnd,#context_duplicateTab,#context_duplicateTab + menuseparator,#context_moveTabOptions,#context_pinSelectedTabs,#context_reloadSelectedTabs,#context_reloadTab,#context_reopenInContainer,#context_sendTabToDevice,#context_sendTabToDevice + menuseparator,#context_toggleMuteSelectedTabs,#context_undoCloseTab,#context_unpinSelectedTabs{display:none !important}
+
+/* context menu - tool bar */
+#toggle_PersonalToolbar,#toggle_toolbar-menubar,#toolbar-context-bookmarkSelectedTab,#toolbar-context-bookmarkSelectedTabs,#toolbar-context-reloadSelectedTab,#toolbar-context-reloadSelectedTabs,#toolbar-context-selectAllTabs,#toolbar-context-undoCloseTab,#toolbar-context-undoCloseTab + menuseparator,.customize-context-autoHide,.customize-context-manageExtension,.customize-context-moveToPanel,.customize-context-removeExtension,.customize-context-removeExtension + menuseparator,.customize-context-removeFromToolbar,.viewCustomizeToolbar{display:none !important}
+
+
+/* context menu - url bar */
+#urlbar menuitem[anonid="paste-and-go"],#urlbar menuitem[cmd="cmd_copy"],#urlbar menuitem[cmd="cmd_cut"],#urlbar menuitem[cmd="cmd_delete"],#urlbar menuitem[cmd="cmd_delete"] + menuseparator,#urlbar menuitem[cmd="cmd_paste"],#urlbar menuitem[cmd="cmd_selectAll"],#urlbar menuitem[cmd="cmd_undo"],#urlbar menuitem[cmd="cmd_undo"] + menuseparator{display:none !important}
+
+/* find bar - hide extra options */
+.findbar-entire-word, .findbar-case-sensitive, .findbar-highlight {visibility: collapse !important} 
+
+/* nav bar - hide back & forward buttons */
+:-moz-any(#back-button, #forward-button){display:none !important}
+
+/* nav bar - hide hamburger button */
+#PanelUI-menu-button{display:none}
+
+/* nav + tab bar merge */
+:root[uidensity=compact]{--tabs-margin-left:3em;--space-before-tabs:34.5em;--space-after-tabs:2em;--nav-margin-top:-1.9em;--menu-margin-top:0.05em}
+#TabsToolbar{margin-left:var(--tabs-margin-left) !important;padding-left:var(--space-before-tabs) !important;margin-right:var(--space-after-tabs) !important;margin-bottom:-0.1em; !important}
+#nav-bar{margin-top:var(--nav-margin-top) !important;margin-right:60vw !important;margin-bottom:-0.1em !important;background-color:transparent !important}
+
+/* side bar - hide header & search */
+#sidebar-header,#sidebar-search-container{display:none}
+
+/* tab bar - close button on hover only */
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button{display:none !important}
+.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button{display:-moz-box !important}
+
+/* tab bar - hide buttons */
+.tabbrowser-strip *[class^="scrollbutton"], .tabbrowser-strip *[class^="tabs-alltabs"], .tabbrowser-strip *[class^="tabs-newtab-button"]{display:none}
+
+/* tool bar - compact icons */
+#widget-overflow-fixed-list{display:grid;grid-template-rows:repeat(1,1.5em);grid-template-columns:repeat(20, 15em)}
+#widget-overflow-fixed-list .toolbarbutton-1 > .toolbarbutton-text{display:none !important}
+
+/* url bar - hide bookmark star */
+#star-button{display:none !important}
+
+/* url bar - hide dropdown */
+.urlbar-history-dropmarker{display:none !important}
+
+/* url bar - hide feed button */
+#feed-button {display:none !important}
+
+/* url bar - hide info icon */
+#urlbar:not(.grantedPermissions) #identity-icon{transition:300ms !important;opacity:0 !important;-moz-margin-end:-1.1em !important}
+
+/* url bar - hide page actions */
+#pageActionButton{display:none !important}
+
+#urlbar-container {max-width: 400px !important;}
+#search-container {max-width: 200px !important;} 

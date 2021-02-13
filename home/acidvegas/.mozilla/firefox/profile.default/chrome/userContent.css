@@ -1,0 +1,4 @@
+/* color blank pages for dark theme */
+@-moz-document url("about:blank"){*:empty:not([id]):not([style]){background-color:#474749 !important;}}
+@-moz-document url("about:home"), url("about:newtab"){.activity-stream{background-color:#474749 !important;}}
+@-moz-document url("about:newtab"){input#newtab-customize-button{display:none !important;}}

@@ -1,0 +1,17 @@
+#!/bin/sh
+#todo: custom dmenu args cleaner, cli only mode
+db=$HOME/.todo
+touch $db
+while :
+do
+	cmd=$(dmenu -l 10 -m 0 -fn "Misc Ohsnap.Icons:style=Regular:size=11" -nb "#000000" -nf "#FFFFFF" -sb "#000000" -sf "#00D787" "$@" < "$db")
+	if [ -z "$cmd" ]; then
+		break
+	elif grep -q "^$cmd\$" "$db"; then
+		grep -v "^$cmd\$" "$db" > "$db.$$"
+		mv "$db.$$" "$db"
+	else
+		echo "$cmd" >> "$db"
+	fi
+done
+exit 0

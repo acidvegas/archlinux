@@ -1,0 +1,21 @@
+[alias]
+	commits = log --color --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	mclone = clone --depth=1
+	rmcommits = !git checkout --orphan latest_branch && git add -A && git commit -S -am "Initial commit" && git branch -D master && git branch -m master && git push -f origin master
+	setup = !git config user.name acidvegas && git config user.email acid.vegas@acid.vegas && git config user.signingkey 441EB0F297E0DCF0AEF2F711EF4B922DB85DC9DE
+	stats = diff --stat
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[commit]
+	gpgSign = true
+[core]
+	editor = nano
+[user]
+	signingkey = 441EB0F297E0DCF0AEF2F711EF4B922DB85DC9DE
+	name = acidvegas
+	email = acid.vegas@acid.vegas

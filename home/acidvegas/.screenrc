@@ -1,0 +1,25 @@
+altscreen on
+defscrollback 1000
+defutf8 on
+startup_message off
+term screen-256color
+vbell off
+zombie kr
+
+screen -t bash      bash
+screen -t irc       weechat
+screen -t changeme ssh changeme
+
+caption always "%{= kw}%=%-w%{= wk}%n %t%{-}%+W%="
+
+unbindall
+bindkey ^[[1;3D prev
+bindkey ^[[1;3C next
+bind : colon
+bind c screen
+bind d detach
+bind k kill
+bind n number
+bind r redisplay
+bind s source $HOME/.screenrc
+bind t title

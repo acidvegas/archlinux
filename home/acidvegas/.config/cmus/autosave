@@ -1,0 +1,81 @@
+set aaa_mode=artist
+set altformat_current= %f
+set altformat_title=cmus: %f
+set altformat_trackwin= %f
+set auto_expand_albums_follow=false
+set auto_expand_albums_search=false
+set auto_expand_albums_selcur=false
+set color_cmdline_attr=default
+set color_cmdline_bg=default
+set color_cmdline_fg=default
+set color_cur_sel_attr=default
+set color_error=lightred
+set color_info=lightyellow
+set color_separator=gray
+set color_statusline_attr=default
+set color_statusline_bg=black
+set color_statusline_fg=white
+set color_titleline_attr=default
+set color_titleline_bg=black
+set color_titleline_fg=white
+set color_trackwin_album_attr=default
+set color_trackwin_album_bg=default
+set color_trackwin_album_fg=black
+set color_win_attr=default
+set color_win_bg=black
+set color_win_cur=lightyellow
+set color_win_cur_attr=default
+set color_win_cur_sel_attr=default
+set color_win_cur_sel_bg=red
+set color_win_cur_sel_fg=black
+set color_win_dir=lightblue
+set color_win_fg=default
+set color_win_inactive_cur_sel_attr=default
+set color_win_inactive_cur_sel_bg=gray
+set color_win_inactive_cur_sel_fg=black
+set color_win_inactive_sel_attr=default
+set color_win_inactive_sel_bg=gray
+set color_win_inactive_sel_fg=black
+set color_win_sel_attr=default
+set color_win_sel_bg=gray
+set color_win_sel_fg=black
+set color_win_title_attr=default
+set color_win_title_bg=default
+set color_win_title_fg=white
+set dsp.alsa.device=default
+set dsp.jack.resampling_quality=2
+set format_current= %t
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}%=%{?volume>=0?vol: %{volume}}%% 
+set format_title=cmus: %a - %t
+set format_trackwin= %t
+set format_trackwin_album=
+set format_treewin=
+set format_treewin_artist=%a
+set lib_sort=artist title filename
+set mixer.alsa.channel=PCM
+set mixer.alsa.device=default
+set mixer.oss.channel=PCM
+set mixer.pulse.restore_volume=1
+set output_plugin=alsa
+set repeat=true
+set set_term_title=true
+set smart_artist_sort=false
+set start_view=tree
+bind common , vol -10%
+bind common . vol +10%
+bind common / search-start
+bind common 1 view tree
+bind common delete win-remove
+bind common down win-down
+bind common enter win-activate
+bind common left seek -5
+bind common p player-pause
+bind common page_down win-page-down
+bind common page_up win-page-up
+bind common q quit -i
+bind common right seek +5
+bind common s view settings
+bind common tab win-next
+bind common u win-update
+bind common up win-up
+fset mp3=filename="*.mp3"

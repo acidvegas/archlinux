@@ -1,0 +1,8 @@
+# <file system> <dir>    <type> <options>                                         <dump> <pass>
+/dev/mmcblk0p1  /boot    vfat   ro,noatime,nodev,noexec,nosuid                    0      2
+/dev/mmcblk0p2  /        ext4   rw,noatime,data=ordered,commit=60                 0      1
+proc            /proc    proc   nosuid,nodev,noexec,hidepid=2,gid=proc            0      0
+tmpfs           /dev/shm tmpfs  rw,noatime,nodev,noexec,nosuid                    0      0
+tmpfs           /tmp     tmpfs  rw,mode=0755,noatime,nodev,nosuid,size=100m       0      0
+tmpfs           /var/log tmpfs  rw,mode=0755,noatime,nodev,noexec,nosuid,size=25m 0      0
+tmpfs           /run     tmpfs  rw,mode=0755,noatime,nodev,nosuid,size=25m        0      0

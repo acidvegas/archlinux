@@ -1,0 +1,17 @@
+#AllowUsers acidvegas@10.0.0.0/8
+#AllowGroups ssh
+AuthenticationMethods publickey
+AuthorizedKeysFile /etc/ssh/authorized_keys/%u
+Banner /etc/issue
+ChallengeResponseAuthentication no
+ClientAliveInterval 0
+DisableForwarding yes
+LoginGraceTime 30
+MaxAuthTries 2
+MaxSessions 2
+MaxStartups 5:25:20
+PasswordAuthentication no
+PermitRootLogin no
+Port CHANGEME
+PrintLastLog no
+Protocol 2

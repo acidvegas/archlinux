@@ -1,0 +1,10 @@
+--- a/dwm.c	2019-03-09 23:32:26.479935899 -0500
++++ b/dwm.c	2019-03-09 23:32:36.269935680 -0500
+@@ -731,7 +731,6 @@
+ 	if ((w = m->ww - sw - x) > bh) {
+ 		if (m->sel) {
+ 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+-			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
+ 			if (m->sel->isfloating)
+ 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+ 		} else {
