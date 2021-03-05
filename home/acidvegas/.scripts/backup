@@ -1,7 +1,0 @@
-#!/bin/sh
-mkdir -p $HOME/.backup/tmp && rm -rf $HOME/.backup/tmp/*
-gpg --export-secret-keys --armor acidvegas > $HOME/.backup/tmp/key.gpg
-ssh supernets 'tar -zcvf ~/supernets.tar.gz ~/services ~/unrealircd ~/www' && scp supernets:supernets.tar.gz $HOME/.backup/tmp/supernets.tar.gz
-ssh watchdog  'tar -zcvf ~/bots.tar.gz ~/bots'                             && scp watchdog:bots.tar.gz       $HOME/.backup/tmp/bots.tar.gz
-tar -zcvf $HOME/.backup/backup-$(date +%Y-%m-%d).tar.gz --transform '!^.*/!!' $HOME/.backup/tmp/bots.tar.gz $HOME/.backup/tmp/key.gpg $HOME/.backup/tmp/supernets.tar.gz $HOME/.password-store $HOME/.ssh/config $HOME/.ssh/key $HOME/dev $HOME/doc $HOME/music
-rm -rf $HOME/.backup/tmp

@@ -3,6 +3,7 @@
 | ------------------ | -------------------------------------------- |
 | ALT   + F#         | Switch to n-th virtual console               |
 | ALT   + LEFT/RIGHT | Switch to next/previous virtual console      |
+| SCROLL LOCK        | Lock input/output
 | SHIFT + PGUP/PGDN  | Scroll console buffer up/down                |
 | CTRL  + A/E        | Move cursor to begining/end of line          |
 | CTRL  + L          | Clean console                                |

@@ -10,6 +10,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 xset s 3600 3600
 
+dunst &
 slstatus &
 unclutter &
 

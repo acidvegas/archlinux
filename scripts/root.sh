@@ -33,10 +33,10 @@ setup_pacman() {
 		sed -i 's/^Architecture = auto/Architecture = armv7h/' /etc/pacman.conf
 	fi
 	pacman -Syyu
-	pacman -S gcc make patch pkg-config python python-pip
-	pacman -S asciiquarium cmatrix
-	pacman -S abduco exa git man ncdu pass-otp sudo tor weechat which
-	pacman -S alsa-utils cmus id3v2 python-eyed3 youtube-dl
+	pacman -S checkbashisms fakeroot gcc go make patch pkg-config python python-pip
+	pacman -S asciiquarium cmatrix gnuchess nyancat
+	pacman -S abduco exa dash git man ncdu pass-otp sudo tor weechat which
+	pacman -S alsa-utils cmus id3v2 mps-youtube python-eyed3 youtube-dl
 	pacman -S dmenu firefox unclutter xclip
 	pacman -S xf86-video-fbdev xorg-xinit xorg-server xorg-xsetroot
 }
@@ -49,24 +49,29 @@ setup_bash() {
 	source /root/.bashrc
 	history -c && export HISTFILESIZE=0 && export HISTSIZE=0 && unset HISTFILE
 	[ -f /root/.bash_history ] && rm /root/.bash_history
+	ln -sfT dash /usr/bin/sh
+	echo -e "[Trigger]\nType = Package\nOperation = Install\nOperation = Upgrade\nTarget = bash\n\n[Action]\nDescription = Re-pointing /bin/sh symlink to dash...\nWhen = PostTransaction\nExec = /usr/bin/ln -sfT dash /usr/bin/sh\nDepends = dash" > /etc/pacman.d/hooks/dash-link.hook
 }
 
 setup_configs() {
-	sed -i 's/^console=tty1/console=tty3/' /boot/cmdline.txt && echo "quiet loglevel=3 logo.nologo consoleblank=0" >> /boot/cmdline.txt
+	sed -i 's/^console=tty1/console=tty3/' /boot/cmdline.txt && echo "quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_level=3 logo.nologo consoleblank=0" >> /boot/cmdline.txt
 	if [ $RPI -eq 0 ]; then
 		echo -e "gpu_mem=16\navoid_warnings=1\ndisable_splash=1\ndtparam=act_led_trigger=none\ndtparam=act_led_activelow=on\ndtoverlay=pi3-disable-bt\ndtparam=audio=off" > /boot/config.txt
 	elif [ $RPI -eq 4 ]; then
 		echo -e "avoid_warnings=1\ndisable_splash=1\ndtparam=act_led_trigger=none\ndtparam=act_led_activelow=on\ndtparam=audio=on" > /boot/config.txt
 	fi
 	wget -O /etc/dialogrc $GIT_URL/etc/dialogrc
-	wget -O /etc/issue $GIT_URL/etc/issue
 	wget -O /etc/fstab $GIT_URL/etc/fstab
+	wget -O /etc/issue $GIT_URL/etc/issue
+	wget -O /etc/issue $GIT_URL/etc/motd
 	wget -O /etc/ssh/sshd_config $GIT_URL/etc/ssh/sshd_config
 	wget -O /etc/sudoers.d/sudoers.lecture $GIT_URL/etc/sudoers.d/sudoers.lecture
 	wget -O /etc/topdefaultrc $GIT_URL/etc/topdefaultrc
 	echo -e "defaults.pcm.card 1\ndefaults.ctl.card 1" > /etc/asound.conf
-	echo -e "set boldtext\nset morespace\nset nohelp\nset nonewlines\nset nowrap\nset quickblank\nset tabsize 4\nunbind ^J main\ninclude \"/usr/share/nano/*.nanorc\"" > /etc/nanorc
+	echo -e "set boldtext\nset markmatch\nset minibar\nset morespace\nset nohelp\nset nonewlines\nset nowrap\nset quickblank\nset tabsize 4\nunbind ^J main\ninclude \"/usr/share/nano/*.nanorc\"" > /etc/nanorc
 	echo -e "Defaults lecture = always\nDefaults lecture_file = /etc/sudoers.d/sudoers.lecture\nroot ALL=(ALL) ALL\n%wheel ALL=(ALL) ALL" > /etc/sudoers
+	echo "kernel.printk = 3 3 3 3" > /etc/sysctl.d/20-quiet-printk.conf
+	echo "kernel.core_pattern=|/bin/false" > /etc/sysctl.d/50-coredump.conf
 	echo -e "[Journal]\nStorage=volatile\nSplitMode=none\nRuntimeMaxUse=500K" > /etc/systemd/journald.conf
 	mkdir -p /etc/systemd/system/systemd-logind.service.d && echo -e "[Service]\nSupplementaryGroups=proc" > /etc/systemd/system/systemd-logind.service.d/hidepid.conf
 	echo "FONT=ohsnap6x11r" > /etc/vconsole.conf

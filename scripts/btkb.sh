@@ -2,7 +2,7 @@
 pacman -S bluez bluez-utils
 systemctl enable bluetooth && sudo systemctl start bluetooth
 sed -i 's/#AutoEnable=false/AutoEnable=true/' /etc/bluetooth/main.conf
-bluetoothctl power on
+bluetoothctl power on # possible bluetoothctl -- <cmd>
 bluetoothctl agent KeyboardOnly
 bluetoothctl pairable on
 bluetoothctl scan on
