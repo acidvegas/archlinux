@@ -35,10 +35,11 @@ setup_pacman() {
 	pacman -Syyu
 	pacman -S checkbashisms fakeroot gcc go make patch pkg-config python python-pip
 	pacman -S asciiquarium cmatrix gnuchess nyancat
-	pacman -S abduco exa dash git man ncdu pass-otp sudo tor weechat which
+	pacman -S abduco exa dash git gpm man ncdu pass-otp sudo tor weechat which
 	pacman -S alsa-utils cmus id3v2 mps-youtube python-eyed3 youtube-dl
 	pacman -S dmenu firefox unclutter xclip
 	pacman -S xf86-video-fbdev xorg-xinit xorg-server xorg-xsetroot
+	systemctl start gpm && systemctl enable gpm
 }
 
 setup_bash() {

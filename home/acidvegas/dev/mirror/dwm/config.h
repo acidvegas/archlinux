@@ -22,6 +22,7 @@ static const char *colors[][3]     = {
 	{ MODKEY|ShiftMask,             KEY, tag,        {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY, toggletag,  {.ui = 1 << TAG} },
 
+// todo: pmenu/todo
 static const char *dmenucmd[]   = { "dmenu_run", "-m", "0", "-fn", dmenufont, "-nb", "#000000", "-nf", "#FFFFFF", "-sb", "#000000", "-sf", "#00D787", NULL };
 static const char *termcmd[]    = { "tabbed", "-cf", "st", "-w", NULL };
 static const char *mutevol[]    = { "amixer", "-q", "set", "Headphone", "toggle", NULL };

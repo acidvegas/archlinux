@@ -19,3 +19,5 @@
 	signingkey = 441EB0F297E0DCF0AEF2F711EF4B922DB85DC9DE
 	name = acidvegas
 	email = acid.vegas@acid.vegas
+[pull]
+	ff = only

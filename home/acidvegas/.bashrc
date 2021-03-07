@@ -21,8 +21,11 @@ alias ls='ls --color=auto'
 alias ncdu='ncdu --color dark -rr'
 
 # rewrites
+alias ddgr='ddgr -n 5 -x --np --colors=nodgiy'
 alias exa='exa -aghl --git'
+alias google='googler -n 5 -x --np --colors=nodgiy'
 alias mtm='mtm -t mtm-256color'
+alias pipes='pipes -p 5 -r 0 -f 20'
 alias ssh-add='ssh-add -t 1h'
 alias su='su -l'
 alias vlock='vlock -a'
@@ -39,12 +42,8 @@ alias weather="curl wttr.in/11955?format=\"%c+%C+%7C+%h+%7C+%t+%28+%f+%29+%w+%7C
 alias y2m='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 -o "%(title)s.%(ext)s" --no-cache-dir --no-call-home'
 
 # scripts
-alias gitremote='sh $HOME/.scripts/gitremote'
-alias google='python $HOME/dev/git/mirror/googler/googler -n 5 -x --np --colors=nodgiy'
-alias ddgr='python $HOME/dev/git/mirror/ddgr/ddgr -n 5 -x --np --colors=nodgiy'
 alias lyrics='python $HOME/.scripts/lyrics.py'
 alias mutag='sh $HOME/.scripts/mutag'
-alias pipes='sh $HOME/dev/git/mirror/pipes/pipes.sh -p 5 -r 0 -f 20'
 alias todo='~/.scripts/todo'
 
 backup() {

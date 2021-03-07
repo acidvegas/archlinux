@@ -7,7 +7,6 @@ useradd -m -s /bin/bash acidvegas && gpasswd -a acidvegas wheel && passwd acidve
 timedatectl set-timezone America/New_York && timedatectl set-ntp true
 echo "LANG=en_US.UTF-8" > /etc/locale.conf && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 pacman-key --init && pacman-key --populate archlinux
-pacman -Syy wget
 pacman -Syyu
 pacman -S gcc make patch pkg-config python python-pip
 pacman -S abduco exa git man ncdu sudo tor weechat which
