@@ -64,11 +64,11 @@ setup_configs() {
 	wget -O /etc/dialogrc $GIT_URL/etc/dialogrc
 	wget -O /etc/fstab $GIT_URL/etc/fstab
 	wget -O /etc/issue $GIT_URL/etc/issue
-	wget -O /etc/issue $GIT_URL/etc/motd
+	wget -O /etc/motd $GIT_URL/etc/motd
 	wget -O /etc/ssh/sshd_config $GIT_URL/etc/ssh/sshd_config
 	wget -O /etc/sudoers.d/sudoers.lecture $GIT_URL/etc/sudoers.d/sudoers.lecture
 	wget -O /etc/topdefaultrc $GIT_URL/etc/topdefaultrc
-	echo -e "defaults.pcm.card 1\ndefaults.ctl.card 1" > /etc/asound.conf
+	echo -e "defaults.pcm.card 1\ndefaults.ctl.card 1" > /etc/asound.conf # for alsa issues
 	echo -e "set boldtext\nset markmatch\nset minibar\nset morespace\nset nohelp\nset nonewlines\nset nowrap\nset quickblank\nset tabsize 4\nunbind ^J main\ninclude \"/usr/share/nano/*.nanorc\"" > /etc/nanorc
 	echo -e "Defaults lecture = always\nDefaults lecture_file = /etc/sudoers.d/sudoers.lecture\nroot ALL=(ALL) ALL\n%wheel ALL=(ALL) ALL" > /etc/sudoers
 	echo "kernel.printk = 3 3 3 3" > /etc/sysctl.d/20-quiet-printk.conf

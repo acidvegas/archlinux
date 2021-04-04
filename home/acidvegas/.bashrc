@@ -70,7 +70,7 @@ color() {
 }
 
 gitremote() {
-	for d in $(find $HOME/dev/git -type d -name mirrors -prune -o -type d -name .git -print | sort); do
+	for d in $(find $HOME/dev/git -type d -name mirror -prune -o -type d -name .git -print | sort); do
 		u=$(echo $d | cut -d/ -f6)
 		r=$(echo $d | cut -d/ -f7)
 		echo "updating $u/$r..."

@@ -24,7 +24,7 @@ setup_pypi() {
 setup_builds() { # aur vs git?
 	mkdir -p $HOME/dev/git/mirror
 
-	git clone https://github.com/miguelmota/cointop.git $HOME/dev/git/mirror/cointop # make install
+	git clone https://github.com/miguelmota/cointop.git $HOME/dev/git/mirror/cointop
 	cd $HOME/dev/git/mirror/cointop && makepkg -si # change this to build dir
 
 	git clone https://github.com/jarun/ddgr.git $HOME/dev/git/mirror/ddgr
@@ -56,7 +56,7 @@ setup_builds() { # aur vs git?
 	sudo make -C $HOME/dev/git/mirror/slstatus clean install
 
 	git clone --depth 1 git://git.suckless.org/st $HOME/dev/git/mirror/st
-	wget -O $HOME/dev/git/mirror/st/config.h $GIT_URL/home/acidvegas/dev/git/mirror/st/config.h # Changes to font, tab size, and colors
+	wget -O $HOME/dev/git/mirror/st/config.h $GIT_URL/home/acidvegas/dev/git/mirror/st/config.h
 	sed -i 's/it#8,/it#4,/g' $HOME/dev/git/mirror/st/st.info
 	sudo make -C $HOME/dev/git/mirror/st clean install
 
